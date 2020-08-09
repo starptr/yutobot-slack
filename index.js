@@ -38,7 +38,7 @@ const fancyLog = (msg, channel = process.env.SLACK_LOG_CHANNEL) => {
 
 (async () => {
 	// Start your app
-	await app.start(process.env.PORT || 3000);
+	await app.start(process.env.PORT || 3002);
 
 	fancyLog("⚡️ Bolt app is running!");
 
