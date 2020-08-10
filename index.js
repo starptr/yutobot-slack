@@ -51,7 +51,7 @@ const fancyLog = (msg, channel = process.env.SLACK_LOG_CHANNEL) => {
 			await app.client.chat.postMessage({
 				token: process.env.SLACK_OAUTH_TOKEN,
 				channel: process.env.SLACK_COUNTING_UNICODE_CHANNEL,
-				text: currentChar,
+				text: ` ${currentChar} `,
 			});
 			unicode_index++;
 			if (unicode_index % 10 === 0) await fs.writeFile("unicount.txt", unicode_index.toString());
