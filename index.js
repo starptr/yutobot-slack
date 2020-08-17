@@ -36,6 +36,12 @@ const fancyLog = (msg, channel = process.env.SLACK_LOG_CHANNEL) => {
 	});
 };
 
+// Listens to incoming messages that contain "hello"
+app.message("!ping", async ({ message, say }) => {
+	// say() sends a message to the channel where the event was triggered
+	await say(`Pong!`);
+});
+
 (async () => {
 	// Start your app
 	await app.start(process.env.PORT || 3002);
