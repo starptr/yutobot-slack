@@ -5,9 +5,9 @@ const wiggler = async (app) => {
 	let pfpsUrls = [
 		"http://cloud-2to2o6psz.vercel.app/cartoony1.png",
 		"http://cloud-2to2o6psz.vercel.app/cartoony2.png",
-		"http://cloud-2to2o6psz.vercel.app/cartoony3.png",
+		"http://cloud-48towm6hx.vercel.app/cartoony3_b.png",
 		"http://cloud-2to2o6psz.vercel.app/cartoony4.png",
-		"http://cloud-2to2o6psz.vercel.app/cartoony5.png",
+		"http://cloud-48towm6hx.vercel.app/cartoony5_b.png",
 		"http://cloud-2to2o6psz.vercel.app/cartoony6.png",
 		"http://cloud-2to2o6psz.vercel.app/cartoony7.png",
 		"http://cloud-2to2o6psz.vercel.app/cartoony8.png",
