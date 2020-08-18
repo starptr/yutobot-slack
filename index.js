@@ -9,6 +9,7 @@ const app = new App({
 });
 
 const unicodeCounterStart = require("./modules/unicode-counter");
+const wiggler = require("./modules/wiggler");
 
 const fancyLog = (msg, channel = process.env.SLACK_LOG_CHANNEL) => {
 	if (msg.message) console.error(msg);
@@ -50,4 +51,6 @@ app.message("!ping", async ({ message, say }) => {
 	fancyLog("⚡️ Bolt app is running!");
 
 	await unicodeCounterStart(app);
+
+	await wiggler(app);
 })();
