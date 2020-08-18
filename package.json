@@ -4,10 +4,10 @@
 	"description": "My online presence automator.",
 	"main": "index.js",
 	"scripts": {
-		"start": "babel-node index.js",
-		"develop": "babel-watch index.js",
-		"build": "babel index.js --out-file ./bin/yutobot-slack.js",
-		"deploy": "node ./bin/yutobot-slack.js"
+		"start": "babel-node ./src/index.js",
+		"develop": "babel-watch ./src/index.js",
+		"build": "babel src --out-dir bin --copy-files",
+		"deploy": "node ./bin/index.js"
 	},
 	"author": "Yuto Nishida <yuyu.nishida@gmail.com>",
 	"license": "MIT",
