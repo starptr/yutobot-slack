@@ -31,6 +31,7 @@ const unicode_counter = async app => {
 				fancyLog(err);
 			}
 		}
+		// Guarantees at least 1 second delay
 		setTimeout(printNextUnicode, 1000);
 	};
 	printNextUnicode();
