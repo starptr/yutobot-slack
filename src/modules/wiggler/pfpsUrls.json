@@ -1,0 +1,25 @@
+{
+	"day": [
+		"https://cloud-2to2o6psz.vercel.app/cartoony1.png",
+		"https://cloud-2to2o6psz.vercel.app/cartoony2.png",
+		"https://cloud-48towm6hx.vercel.app/cartoony3_b.png",
+		"https://cloud-2to2o6psz.vercel.app/cartoony4.png",
+		"https://cloud-48towm6hx.vercel.app/cartoony5_b.png",
+		"https://cloud-2to2o6psz.vercel.app/cartoony6.png",
+		"https://cloud-2to2o6psz.vercel.app/cartoony7.png",
+		"https://cloud-2to2o6psz.vercel.app/cartoony8.png"
+	],
+	"night": [
+		"https://cloud-1hd90v935.vercel.app/cartoony1-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony2-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony3_b-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony4-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony5_b-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony6-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony7-night.png",
+		"https://cloud-1hd90v935.vercel.app/cartoony8-night.png"
+	],
+	"special": {
+		"1111": "http://cloud-fmwat1ze7.vercel.app/cartoonys-1111.png"
+	}
+}
