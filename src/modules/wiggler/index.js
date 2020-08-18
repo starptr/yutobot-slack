@@ -40,6 +40,7 @@ const wiggler = async (app) => {
 		}
 	};
 
+	// Call every 10 seconds, but updates only every minute
 	const updateJob = setInterval(async () => {
 		let now = new Date();
 		if (now.getMinutes() !== m) {
