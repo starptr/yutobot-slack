@@ -63,6 +63,8 @@ const wiggler = async app => {
 				// Rare pfps
 				if ((now.getHours() === 11 || now.getHours() === 23) && now.getMinutes() === 11) {
 					await pushPfpFromUrl(pfpsUrlsAll["special"]["1111"]);
+				} else if ((now.getHours() === 4 || now.getHours() === 16) && now.getMinutes() === 20) {
+					await pushPfpFromUrl(pfpsUrlsAll["special"]["420"]);
 				} else {
 					// Day mode between 6 and 18 o'clock, otherwise night
 					await randomPushPfp(!!(now.getHours() >= 6 && now.getHours() < 18));

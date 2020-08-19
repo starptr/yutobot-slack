@@ -20,8 +20,9 @@
 		"https://cloud-1hd90v935.vercel.app/cartoony8-night.png"
 	],
 	"special": {
-		"1111": "http://cloud-fmwat1ze7.vercel.app/cartoonys-1111.png",
-		"sleep": "http://cloud-ob2si6h3t.vercel.app/sleeping_emoji.png",
-		"yawn": "http://cloud-gyf1g04pa.vercel.app/yawn_emoji.png"
+		"1111": "https://cloud-fmwat1ze7.vercel.app/cartoonys-1111.png",
+		"420": "https://cloud-51y8j6z4m.vercel.app/cartoonys-420.png",
+		"sleep": "https://cloud-ob2si6h3t.vercel.app/sleeping_emoji.png",
+		"yawn": "https://cloud-gyf1g04pa.vercel.app/yawn_emoji.png"
 	}
 }
