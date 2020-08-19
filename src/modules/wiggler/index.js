@@ -8,6 +8,8 @@ const wiggler = async app => {
 	// Get all urls
 	let pfpsUrlsAll = require("./pfpsUrls.json");
 
+	// Last presence
+	let wasActive = true;
 	// Last minute of execution
 	let m = getLocalDateNow().getMinutes() - 1;
 	// Last pfp's index
@@ -47,17 +49,40 @@ const wiggler = async app => {
 	// Call every 10 seconds, but updates only every minute
 	const updateJob = setInterval(async () => {
 		let now = getLocalDateNow();
-		if (now.getMinutes() !== m) {
-			m = now.getMinutes();
-
-			if ((now.getHours() === 11 || now.getHours() === 23) && now.getMinutes() === 11) {
-				await pushPfpFromUrl(pfpsUrlsAll["special"]["1111"]);
-			} else {
-				// Day mode between 6 and 18 o'clock, otherwise night
-				console.log(now.getHours());
-				await randomPushPfp(!!(now.getHours() >= 6 && now.getHours() < 18));
+		// Is active?
+		if (
+			(
+				await app.client.users.getPresence({
+					token: process.env.SLACK_OAUTH_TOKEN,
+					user: process.env.SLACK_AUTHED_USERID,
+				})
+			).presence === "active"
+		) {
+			// Run only every minute, or if presence changed
+			if (now.getMinutes() !== m || !wasActive) {
+				// Rare pfps
+				if ((now.getHours() === 11 || now.getHours() === 23) && now.getMinutes() === 11) {
+					await pushPfpFromUrl(pfpsUrlsAll["special"]["1111"]);
+				} else {
+					// Day mode between 6 and 18 o'clock, otherwise night
+					await randomPushPfp(!!(now.getHours() >= 6 && now.getHours() < 18));
+				}
 			}
+			wasActive = true;
+		} else {
+			// Run only every minute, or if presence changed
+			if (now.getMinutes() !== m || wasActive) {
+				// Vary offline pfp by time
+				if (now.getHours() >= 6 && now.getHours() < 18) {
+					await pushPfpFromUrl(pfpsUrlsAll["special"]["yawn"]);
+				} else {
+					await pushPfpFromUrl(pfpsUrlsAll["special"]["sleep"]);
+				}
+			}
+			wasActive = false;
 		}
+
+		m = now.getMinutes();
 	}, 1000 * 10);
 };
 
