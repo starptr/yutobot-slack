@@ -55,7 +55,7 @@ const wiggler = async app => {
 			} else {
 				// Day mode between 6 and 18 o'clock, otherwise night
 				console.log(now.getHours());
-				await randomPushPfp(!!(now.getHours() >= 6 && now.getHours() <= 18));
+				await randomPushPfp(!!(now.getHours() >= 6 && now.getHours() < 18));
 			}
 		}
 	}, 1000 * 10);
