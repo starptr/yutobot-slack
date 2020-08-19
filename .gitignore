@@ -117,3 +117,6 @@ dist
 
 # Unicode counter checkpoint
 unicount.txt
+
+# Ignore transpiled files
+bin/
