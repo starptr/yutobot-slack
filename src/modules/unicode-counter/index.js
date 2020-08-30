@@ -2,7 +2,14 @@ const fs = require("fs").promises;
 
 const unicode_counter = async app => {
 	//Unicode counter
-	let unicode_index = parseInt((await fs.readFile("unicount.txt")).toString());
+	let unicode_index;
+	try {
+		let rawBuffer = await fs.readFile("unicount.txt");
+		unicode_index = parseInt(rawBuffer.toString());
+	} catch (err) {
+		throw err;
+	}
+
 	// Count up the unicode chars
 	const printNextUnicode = async () => {
 		const currentChar = String.fromCharCode(unicode_index);

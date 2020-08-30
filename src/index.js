@@ -26,7 +26,11 @@ app.message("!ping", async ({ message, say }) => {
 
 	fancyLog("⚡️ Bolt app is running!");
 
-	await unicodeCounterStart(app);
+	try {
+		await unicodeCounterStart(app);
+	} catch (err) {
+		fancyLog(err);
+	}
 
 	await wiggler(app);
 })();
